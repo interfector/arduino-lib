@@ -1,0 +1,7 @@
+2011-11-25 nex <nex@autistici.org>
+
+* arduino.c: sleep mode implemented
+* arduino.c: added pinMode and EEPROM functions
+* arduino-pin.c: testing pins
+* arduino-test.c: waiting for button
+* arduino.c: added pinSet and pinGet
