@@ -4,7 +4,7 @@
 int
 main( int argc, char** argv )
 {
-	int fd = initSerial("/dev/ttyUSB0", 9600 );
+	int fd = initSerial("/dev/ttyUSB0", 115200 );
 	uchar byte;
 	int i = 0, j = 1;
 	int state;
