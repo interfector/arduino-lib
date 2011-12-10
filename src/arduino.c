@@ -179,7 +179,7 @@ setStandBy( )
 
 /* Low level function */
 
-/* Getted from internet */
+/* Got from internet */
 int
 initSerial( const char* serialport, int baud )
 {
