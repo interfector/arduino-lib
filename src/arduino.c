@@ -41,7 +41,7 @@ uint
 pinGet( uint pin, uint type )
 {
 	uchar bytes[3];
-	int result = 0;
+	uint result = 0;
 
 	bytes[0] = '\xA1';    /* pinGet */
 	bytes[1] = (char)pin; /* pinGet */
@@ -180,7 +180,7 @@ setStandBy( )
 
 /* Low level function */
 
-/* Getted from internet */
+/* Got from internet */
 int
 initSerial( const char* serialport, int baud )
 {
