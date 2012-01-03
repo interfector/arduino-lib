@@ -135,7 +135,10 @@ pinGet( int* dbytes, int ndata )
   {
     Serial.print(digitalRead( dbytes[0] ), BYTE);
   } else {
-    Serial.print(analogRead( dbytes[0] ) / 4, BYTE);
+    int val = analogRead( dbytes[0] );
+    Serial.print( val & 0x00FF, BYTE );
+    Serial.print( (val & 0xFF00) >> 8, BYTE );
+/*    Serial.print(analogRead( dbytes[0] ) / 4, BYTE); */
   }
 }
 

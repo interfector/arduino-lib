@@ -28,17 +28,20 @@ pinSet( uint pin, uint type, uint mode )
 
 	(void)getSerialRaw( serial_fd, &result, 1 );
 
-	if( result == RAW_OK )
-		return 0;
-	else
-		return result;
+	if( result < 0 )
+	{
+		perror("getSerialRaw");
+		exit(1);
+	}
+
+	return result;
 }
 
 uint
 pinGet( uint pin, uint type )
 {
 	uchar bytes[3];
-	uchar result = -1;
+	int result = 0;
 
 	bytes[0] = '\xA1';    /* pinGet */
 	bytes[1] = (char)pin; /* pinGet */
@@ -46,9 +49,7 @@ pinGet( uint pin, uint type )
 
 	(void)sendSerialRaw( serial_fd, bytes, 3 );
 
-	_sleep(0.07);
-
-	(void)getSerialRaw( serial_fd, &result, 1 );
+	(void)getSerialRaw( serial_fd, &result, 2 );
 
 #ifdef _DEBUG
 	printf("result: %x\n", result );
@@ -179,7 +180,7 @@ setStandBy( )
 
 /* Low level function */
 
-/* Got from internet */
+/* Getted from internet */
 int
 initSerial( const char* serialport, int baud )
 {
@@ -187,7 +188,7 @@ initSerial( const char* serialport, int baud )
     int fd;
     speed_t brate = baud;
     
-    fd = open(serialport, O_RDWR | O_NOCTTY | O_NDELAY );
+    fd = open(serialport, O_RDWR | O_NOCTTY/* | O_NDELAY */);
 
     if (fd < 0)
     {

@@ -1,4 +1,4 @@
-Sometimes serial trasmission fails :'(
-
-And if in a loop pinGet always return 0 :( (probably 'cause serial trasmission is pretty slow)
-I'll try to implement different serial connection for input and output with arduino mega ;)
+1) Sometimes serial trasmission fails :'(
+	And if in a loop pinGet always return 0 :( (probably 'cause serial trasmission is pretty slow)
+	I'll try to implement different serial connection for input and output with arduino mega ;)
+ FIXED
