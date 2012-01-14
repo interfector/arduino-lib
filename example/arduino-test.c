@@ -17,10 +17,6 @@ main( int argc, char** argv )
 	if( fd < 0 )
 		return -1;
 
-//	setSerialDelay( 100 );
-//	pinMode( IPIN, INPUT );
-//	pinMode( OPIN, OUTPUT );
-
 #ifdef TEST1
 	pinSet( OPIN, ANALOG, 255 );
 
